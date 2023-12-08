@@ -1,0 +1,77 @@
+﻿<Page x:Class="HelpdeskMain.Views.Pages.TicketSubmission"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HelpdeskMain.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="TicketSubmission">
+
+    <Grid Background="Black">
+
+        <Button Name="BackArrow" VerticalAlignment="Top" HorizontalAlignment="Left" Content="&lt;-" Background="Black" BorderBrush="Black" Foreground="White" Margin="20" Click="BackArrowSPClick" />
+        <Button Name="ProfileHead" VerticalAlignment="Top" HorizontalAlignment="Right" Content="o" Background="Black" BorderBrush="Black" Foreground="White" Margin="20" Click="ProfileHeadClick" />
+
+        <StackPanel Name="PHPanel" Width="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Visibility="Collapsed">
+            <Button Content="Logout" Click="LogoutButton_Click" Background="Black" Foreground="White" Margin=" 0 30 0 0" Width="80" Height="40" BorderBrush="White" BorderThickness="2"></Button>
+
+        </StackPanel>
+
+        <Border BorderThickness="25" BorderBrush="#212225" CornerRadius="10" Margin="230, 110, 230, 110" >
+            <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True">
+                <Grid Background="#212225" Margin="0">
+                    <Grid Background="#212225" Margin="50, 5, 5, 5">
+                        <StackPanel>
+                            <TextBlock Margin="10" Text="SUBMIT TICKET" FontWeight="Bold" FontSize="40" HorizontalAlignment="Center" Foreground="White" />
+                            <TextBlock Text="Fill this form to submit a ticket to our helpdesk." HorizontalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Answer the prompts to the best of your ability - you may not need to answer every prompt." HorizontalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="Upon submission, your ticket will be assigned to a tech expert who will resolve your issue ASAP." HorizontalAlignment="Center" Foreground="White"/>
+                            <TextBlock Text="You will receive updates when there are changes to your ticket status. &#10;&#10; " HorizontalAlignment="Center" Foreground="White" />
+
+
+                            <Label Content="Incident Category:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="ICTextBox" Width="200" HorizontalAlignment="Left" />
+                            <Label Content=" &#10; Relevant Tags:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="TagsTextBox" Width="200" HorizontalAlignment="Left"/>
+                            <Label Content=" &#10; Urgency:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="UrgencyTextBox" Width="200" HorizontalAlignment="Left"/>
+                            <Label Content=" &#10; Issue:" HorizontalAlignment="Left" Margin="0,10,0,0" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBox x:Name="IssueTextBox" Width="200" Height="100" HorizontalAlignment="Left" VerticalScrollBarVisibility="Auto"/>
+                            <Label Content=" &#10; Symptoms:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="SymptomsTextBox" Width="200" HorizontalAlignment="Left"/>
+                            <Label Content=" &#10; Impact:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="ImpactTextBox" Width="200" HorizontalAlignment="Left"/>
+                            <Label Content=" &#10; Additional Information:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White" />
+                            <TextBox x:Name="AdditionalInfoTextBox" Width="200" HorizontalAlignment="Left"/>
+
+                            <Label Content="&#10; &#10; Your Name:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBox x:Name="NameTextBox" Width="200"  HorizontalAlignment="Left"/>
+                            <Label Content="&#10; &#10; Your Email:" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <TextBox x:Name="EmailTextBox" Width="200"  HorizontalAlignment="Left"/>
+                            <Label Content=" &#10; Date of Submission:" HorizontalAlignment="Left" Margin="0,10,0,0" FontWeight="Bold" FontSize="20" Foreground="White"/>
+                            <DatePicker x:Name="DatePicker" Width="200" Margin="0,0,0,10" HorizontalAlignment="Left"/>
+                            <TextBlock Text=" &#10; " />
+
+
+
+
+                            <Button Content="Submit Ticket" Margin="10" Click="SubmitTicket_Click"/>
+
+                        </StackPanel>
+
+
+
+
+
+
+
+
+                    </Grid>
+                </Grid>
+            </ScrollViewer>
+        </Border>
+
+
+    </Grid>
+</Page>

@@ -1,0 +1,142 @@
+﻿<Page x:Class="HelpdeskMain.Views.Pages.LoggedIn"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HelpdeskMain.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoggedIn">
+
+    <Page.Resources>
+        <BitmapImage x:Key="LightSpeed" UriSource="/Assets/Icons/G703LightSpeed.png"/>
+        <BitmapImage x:Key="Presets" UriSource="/Assets/Icons/DevicePresets.png"/>
+        <BitmapImage x:Key="Profile" UriSource="/Assets/Icons/Profile.png"/>
+
+
+        <BitmapImage x:Key="OpenMenuIcon" UriSource="/Assets/Icons/Menu.png"/>
+        <BitmapImage x:Key="CloseMenu" UriSource="/Assets/Icons/CloseMenu.png"/>
+
+        <BitmapImage x:Key="HomeIcon" UriSource="/Assets/Icons/HomeIcon.png"/>
+        <BitmapImage x:Key="GameIcon" UriSource="/Assets/Icons/GameIcon.png"/>
+        <BitmapImage x:Key="CommunityIcon" UriSource="/Assets/Icons/CommunityIcon.png"/>
+        <BitmapImage x:Key="ResourcesIcon" UriSource="/Assets/Icons/ResourcesIcon.png"/>
+        <BitmapImage x:Key="SettingsIcon" UriSource="/Assets/Icons/SettingsIcon.png"/>
+        <BitmapImage x:Key="HelpIcon" UriSource="/Assets/Icons/HelpIcon.png"/>
+
+
+        <FontFamily x:Key="MenuFont">/GHubVerTwo;component/Assets/Fonts/#Futura PT Medium</FontFamily>
+
+
+
+        <Style x:Key="MenuStyle" TargetType="ContextMenu">
+
+            <Setter Property="Placement" Value="Left"/>
+            <Setter Property="HorizontalOffset" Value="0"/>
+            <Setter Property="VerticalOffset" Value="0"/>
+            <Setter Property="PlacementRectangle" Value="0,0,1,1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="ContextMenu">
+
+                        <Border Background="#212225" BorderBrush="White">
+                            <StackPanel Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+
+                                <MenuItem Padding="0,25,0,0">
+                                    <MenuItem.Header>
+                                        <Image Source="{StaticResource CloseMenu}" Margin="0,30,300,20" Width="26" Height="26"/>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+
+                                <!--Menu items to store text and icon for each menu function-->
+                                <MenuItem Padding="0,25,0,25">
+                                    <MenuItem.Header>
+                                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                            <Image Source="{StaticResource HomeIcon}" Margin="0,0,25,0" Width="26" Height="26"/>
+                                            <TextBlock Text="Home" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27"/>
+                                        </StackPanel>
+                                    </MenuItem.Header>
+                                </MenuItem>
+
+                                <Button Padding="-30,25,0,25" Click="PageNotYetSet" Background="#212225" BorderBrush="#212225">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource GameIcon}" Margin="0,0,25,0" Width="26" Height="26"/>
+                                        <TextBlock Text="Games &amp; Applications" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Padding="-155,25,0,25" Click="PageNotYetSet" Background="#212225" BorderBrush="#212225">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource CommunityIcon}" Margin="0,0,25,0" Width="26" Height="26"/>
+                                        <TextBlock Text="Community" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Padding="-175,25,0,25" Click="PageNotYetSet" Background="#212225" BorderBrush="#212225">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource ResourcesIcon}" Margin="0,0,25,0" Width="26" Height="26"/>
+                                        <TextBlock Text="Resources" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27"/>
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Padding="-195,25,0,25" Click="PageNotYetSet" Background="#212225" BorderBrush="#212225">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource SettingsIcon}" Margin="0,0,25,0" Width="26" Height="26"/>
+                                        <TextBlock Text="Settings" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27" />
+                                    </StackPanel>
+                                </Button>
+
+                                <Button Padding="-50,25,0,25" Margin="0,100,0,30" Click="Help_Click" Background="#212225" BorderBrush="#212225">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Source="{StaticResource HelpIcon}" Margin="0,0,25,0"  Width="26" Height="26"/>
+                                        <TextBlock Text="Get Help &amp; Support" Foreground="White" FontFamily="{StaticResource MenuFont}" FontSize="27"/>
+                                    </StackPanel>
+                                </Button>
+
+                            </StackPanel>
+                        </Border>
+
+
+                    </ControlTemplate>
+
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+
+
+        <ContextMenu x:Key="MenuDisplayed" Style="{StaticResource MenuStyle}">
+
+        </ContextMenu>
+
+    </Page.Resources>
+
+
+    <Grid Background="Black" >
+
+        <!-- <userControls:UserMenuUC Loaded="UserMenuUC_Loaded" Margin="40,40,0,0" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top"/> -->
+
+        <Image Source="{StaticResource LightSpeed}" Margin="342,130,342,130" Height="450"/>
+        <Image Source="{StaticResource Presets}" Margin="0,40,74,0" Width="300" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+
+        <Button Name="ProfileHead" Margin="0,56,29,0" Width="30" HorizontalAlignment="Right" VerticalAlignment="Top" Background="Black" BorderBrush="Black" Click="ProfileHeadClick">
+            <Image Source="{StaticResource Profile}" />
+        </Button>
+
+        <StackPanel Name="PHPanel" Width="200" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0" Visibility="Collapsed">
+            <Button Name="LogoutButton"  Content="Logout" Background="Black" Foreground="White" Margin=" 0 30 0 0" Width="80" Height="40" BorderBrush="White" BorderThickness="2" Click="LogoutButton_Click">
+            </Button>
+            <Button x:Name="LoginButton" Background="Black" Foreground="White" Margin="0 30 0 0" Width="80" Height="40" BorderBrush="White" BorderThickness="2" Click="LoginButton_Click">
+                Login
+            </Button>
+        </StackPanel>
+
+        <Image Source="{StaticResource OpenMenuIcon}" Margin="40,40,0,0" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" MouseDown="MenuOpen" ContextMenu="{StaticResource MenuDisplayed}"/>
+
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0"/>
+        
+    </Grid>
+    </Page>

@@ -1,0 +1,19 @@
+﻿<Application x:Class="HelpdeskMain.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:HelpdeskMain"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Image x:Key="tickettileicon" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\tickettileicon.png"/>
+            <Image x:Key="createnewtickettile" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\createnewtickettile.png"/>
+            <Image x:Key="prevticketstile" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\prevhelptickettile.png"/>
+            <Image x:Key="fixsymbol1" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group.png"/>
+            <Image x:Key="fixsymbol2" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group1.png"/>
+            <Image x:Key="fixsymbol3" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group2.png"/>
+            <Image x:Key="fixsymbol4" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group3.png"/>
+            <Image x:Key="fixsymbol5" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group4.png"/>
+            <Image x:Key="fixsymbol6" Source="C:\Users\jessi\source\repos\106NewHelpdesk\Views\images\90group5.png"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
